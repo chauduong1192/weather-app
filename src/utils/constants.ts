@@ -1,0 +1,13 @@
+const BASE_URL = process.env.REACT_APP_METAWEATHER_API_URL;
+const CROSS_DOMAIN = process.env.REACT_APP_CROSS_DOMAIN;
+const LOCATION_PATH = 'location';
+const LOCATION_BY_CITY_PATH = `${LOCATION_PATH}/search?query=`;
+const IMAGE_PATH = process.env.REACT_APP_IMAGE_PATH;
+
+export {
+  BASE_URL,
+  CROSS_DOMAIN,
+  LOCATION_PATH,
+  LOCATION_BY_CITY_PATH,
+  IMAGE_PATH
+}

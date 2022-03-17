@@ -1,0 +1,10 @@
+.skeleton {
+  animation: pulseAnimation 1.6s ease infinite;
+  background-color: var(--bg-color--skeleton);
+
+  @keyframes pulseAnimation {
+    0% { opacity: 1;}
+    45% { opacity: .3;}
+    100% {opacity: 1;}
+  }
+}

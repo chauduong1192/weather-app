@@ -1,0 +1,12 @@
+.loader {
+  .img {
+    height: 50px;
+    border-radius: var(--forecast-border-radius);
+  }
+  div {
+    width: 100px;
+    height: 16px;
+    margin-bottom: 8px;
+    border-radius: var(--forecast-border-radius);
+  }
+}

@@ -1,0 +1,12 @@
+.input-group {
+  & .form-control {
+    border-color: var(--bg-color);
+    width: 300px !important;
+
+    &:focus {
+      box-shadow: none;
+      border-color: var(--second-color);
+    }
+  }
+}
+
