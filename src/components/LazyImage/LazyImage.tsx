@@ -1,0 +1,50 @@
+import React, { useEffect, useState, useRef, Ref } from 'react';
+import classNames from 'classnames';
+import "./LazyImage.scss";
+
+interface LazyImageProps {
+  className?: string;
+  src: string;
+  lqip?: string;
+  alt?: string;
+  aspectRatio?: number
+}
+
+const LazyImage: React.FC<LazyImageProps> = ({
+  className,
+  src,
+  lqip,
+  alt,
+  aspectRatio = 2 / 3
+}) => {
+  const [loaded, setLoaded] = useState(false);
+  const imgRef = useRef<any>(null);
+
+  useEffect(() => {
+    if (imgRef.current && imgRef.current.complete) {
+      setLoaded(true);
+    }
+  }, []);
+
+  const handleOnLoad = () => {
+    setLoaded(true);
+  }
+
+  return (
+    <div className={classNames('lazy-image',className)}>
+      <div style={{ paddingBottom: `${100 / aspectRatio}%` }} />
+      <div className="no-lqip" style={{ backgroundColor: loaded ? 'white' : '#eee'}} />
+      <img
+        loading="lazy"
+        src={src}
+        alt={alt || 'no alt'}
+        ref={imgRef}
+        onLoad={handleOnLoad}
+        className={classNames('source', loaded && 'loaded')}
+      />
+    </div>
+  );
+};
+
+
+export default LazyImage;

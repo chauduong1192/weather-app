@@ -2,7 +2,7 @@ import Skeleton from '../Skeleton';
 import "./ForeCastLoader.scss";
 
 const Loader: React.FC = () => (
-  <div className="forecast loader">
+  <div className="forecast">
     <Skeleton className="img" />
     <Skeleton />
     <Skeleton />
@@ -11,8 +11,8 @@ const Loader: React.FC = () => (
 );
 
 const ForeCastLoader: React.FC = () => (
-  <div className="forecast-box">
-    {[...Array(3)].map(load => <Loader key={load} />)}
+  <div className="forecast-box loader">
+    {[...Array(5)].map(load => <Loader key={load} />)}
   </div>
 );
 

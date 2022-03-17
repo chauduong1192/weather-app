@@ -1,11 +1,27 @@
-.input-group {
-  & .form-control {
-    border-color: var(--bg-color);
-    width: 300px !important;
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
 
-    &:focus {
-      box-shadow: none;
-      border-color: var(--second-color);
+.search-form {
+  margin-top: 32px;
+  .input-group {
+    & .form-control {
+      border-color: var(--bg-color);
+      width: 300px;
+  
+      &:focus {
+        box-shadow: none;
+        border-color: var(--second-color);
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      & .form-control {
+        width: 100%;
+      }
+      & button {
+        width: 100%;
+        margin-top: 10px;
+      }
     }
   }
 }

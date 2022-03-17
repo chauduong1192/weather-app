@@ -6,7 +6,7 @@ interface NotFoundProps {
 const DEFAULT_MESSAGE = "An error occurred";
 
 const NotFound: React.FC<NotFoundProps> = ({ message = DEFAULT_MESSAGE }) => (
-  <div className="not-found-text my-3 mw-100 text-center" role="alert">
+  <div className="not-found-text" role="alert">
     {message}
   </div>
 );
