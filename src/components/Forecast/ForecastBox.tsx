@@ -7,7 +7,9 @@ type ForeBoxProps = {
 }
 const ForecastBox: React.FC<ForeBoxProps> = ({ woeLocations }) => {
   if (!woeLocations.length) {
-    <div>Empty Data</div>
+    return(
+      <div>Empty Data</div>
+    );
   }
 
   return (

@@ -3,10 +3,10 @@ import { fetchLocationByCity } from '../../redux/weather/actions';
 import { weatherReducer } from '../../redux/weather/selectors';
 import SearchForm from './SearchForm';
 
-export const mapStateToProps = (state: any) => ({
+export const mapStateToProps = state => ({
   isError: weatherReducer(state).isError,
-  errorMessage: weatherReducer(state).errorMessage,
-  isFetching: weatherReducer(state).isFetching
+  isFetching: weatherReducer(state).isFetching,
+  errorMessage: weatherReducer(state).errorMessage
 });
 
 const mapDispatchToProps = {

@@ -1,12 +1,17 @@
 import React from 'react';
 
 import SearchForm from '../SearchForm';
-import ForecastBox from '../Forecast';
+import ForecastBox, { ForecastProps } from '../Forecast';
 import ForeCastLoader from '../ForeCastLoader';
 import { WeatherState } from '../../redux/weather/reducer';
 import './App.scss';
 
-type AppProps = WeatherState;
+type AppProps = {
+  isFetching: boolean;
+  isFetched: boolean;
+  woeLocations: ForecastProps[];
+};
+
 const App: React.FC<AppProps> = ({
   isFetching,
   isFetched,

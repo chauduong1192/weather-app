@@ -1,20 +1,16 @@
+import React from 'react';
 import "./Skeleton.scss";
 
-type SekeltonProps = {
-  style?: any;
+type SkeletonProps = {
   className?: string;
-  pulseColor?: string;
 }
 
-const Sekelton: React.FC<SekeltonProps> = ({
-  style, className, children
+const Skeleton: React.FC<SkeletonProps> = ({
+  className, children
 }) => (
-  <div
-    style={style}
-    className={`skeleton ${className || ''}`}
-  >
+  <div className={`skeleton ${className || ''}`}>
     {children}
   </div>
 );
 
-export default Sekelton;
+export default Skeleton;

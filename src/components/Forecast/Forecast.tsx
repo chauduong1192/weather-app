@@ -21,10 +21,9 @@ const Forecast: React.FC<ForecastProps> = ({
 }) => {
   return (
     <div className="forecast">
-      {/* <img src={`${IMAGE_PATH}/${weatherStateAbbr}.svg`} /> */}
       <LazyImage
-          aspectRatio={1}
-          src={`${IMAGE_PATH}/${weatherStateAbbr}.svg`}
+        aspectRatio={1}
+        src={`${IMAGE_PATH}/${weatherStateAbbr}.svg`}
       />
       <div className="title">{moment(dayOfWeek).format('dddd')}</div>
       <div>{`Max Temp: ${Math.round(maxTemp)}`}</div>

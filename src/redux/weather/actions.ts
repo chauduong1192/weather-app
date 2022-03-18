@@ -3,6 +3,7 @@ import {
   FETCH_LOCATION_BY_CITY_SUCCESS,
   FETCH_LOCATION_BY_CITY_SUCCESS_WITH_EMPTY,
   FETCH_LOCATION_BY_CITY_FAILED,
+  FETCHING_LOCATION_BY_WOEID,
   FETCH_LOCATION_BY_WOEID_SUCCESS,
   FETCH_LOCATION_BY_WOEID_FAILED,
 } from './types';
@@ -13,12 +14,14 @@ import { GenericStoreAction } from '../types';
 
 const fetchLocationByWoeId = (woeId: string) => {
   return async dispatch => {
+    dispatch({
+      type: FETCHING_LOCATION_BY_WOEID,
+    });
     try {
-      
       const locationWoeRes: LocationWoeResponse = await getLocationByWoeId(woeId);
       dispatch({
         type: FETCH_LOCATION_BY_WOEID_SUCCESS,
-        payload: locationWoeRes?.consolidated_weather.map(
+        payload: locationWoeRes.consolidated_weather.map(
           ({
             applicable_date: dayOfWeek,
             max_temp: maxTemp,
@@ -53,7 +56,7 @@ const fetchLocationByCity = (query: string) => {
           type: FETCH_LOCATION_BY_CITY_SUCCESS_WITH_EMPTY,
         });
       }
-      const woeId = locationRes[0]?.woeid.toString();
+      const woeId = locationRes[0].woeid.toString();
       dispatch({
         type: FETCH_LOCATION_BY_CITY_SUCCESS,
         payload: woeId,
@@ -71,4 +74,5 @@ const fetchLocationByCity = (query: string) => {
 
 export {
   fetchLocationByCity,
+  fetchLocationByWoeId,
 };

@@ -22,7 +22,7 @@ export type WeatherState = {
   woeLocations: ForecastProps[];
 }
 
-const initialState = {
+export const initialState = {
   isFetching: false,
   isFetched: false,
   isError: false,

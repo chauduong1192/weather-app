@@ -1,13 +1,14 @@
+import React from 'react';
 import "./NotFound.scss";
 
 interface NotFoundProps {
-  message: string
+  message?: string
 }
 const DEFAULT_MESSAGE = "An error occurred";
 
-const NotFound: React.FC<NotFoundProps> = ({ message = DEFAULT_MESSAGE }) => (
+const NotFound: React.FC<NotFoundProps> = ({ message }) => (
   <div className="not-found-text" role="alert">
-    {message}
+    {message || DEFAULT_MESSAGE}
   </div>
 );
 

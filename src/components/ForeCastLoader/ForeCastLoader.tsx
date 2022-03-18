@@ -1,18 +1,17 @@
+import React from 'react';
 import Skeleton from '../Skeleton';
 import "./ForeCastLoader.scss";
 
-const Loader: React.FC = () => (
-  <div className="forecast">
-    <Skeleton className="img" />
-    <Skeleton />
-    <Skeleton />
-    <Skeleton />
-  </div>
-);
-
 const ForeCastLoader: React.FC = () => (
   <div className="forecast-box loader">
-    {[...Array(5)].map(load => <Loader key={load} />)}
+    {[...Array(5)].map((load, idx) => 
+      <div key={idx} className="forecast">
+        <Skeleton className="img" />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+      </div>
+    )}
   </div>
 );
 

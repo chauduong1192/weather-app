@@ -1,3 +1,7 @@
-import SearchForm from './SearchFormContainer';
+import SearchFormContainer from './SearchFormContainer';
+import SearchForm from './SearchForm';
 
-export default SearchForm;
+export {
+  SearchForm
+}
+export default SearchFormContainer;

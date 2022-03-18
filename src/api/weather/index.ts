@@ -1,4 +1,3 @@
-import React from 'react';
 import { $get } from '../request';
 import { LocationResponse, LocationWoeResponse } from './type';
 import { LOCATION_PATH, LOCATION_BY_CITY_PATH } from '../../utils/constants';

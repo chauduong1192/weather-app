@@ -4,7 +4,7 @@ import { weatherReducer } from '../../redux/weather/selectors';
 import { WeatherState } from '../../redux/weather/reducer';
 import App from './App';
 
-export const mapStateToProps = (state: WeatherState) => ({
+export const mapStateToProps = state => ({
   ...weatherReducer(state)
 });
 

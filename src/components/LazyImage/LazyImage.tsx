@@ -1,11 +1,10 @@
-import React, { useEffect, useState, useRef, Ref } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import classNames from 'classnames';
 import "./LazyImage.scss";
 
 interface LazyImageProps {
   className?: string;
   src: string;
-  lqip?: string;
   alt?: string;
   aspectRatio?: number
 }
@@ -13,10 +12,9 @@ interface LazyImageProps {
 const LazyImage: React.FC<LazyImageProps> = ({
   className,
   src,
-  lqip,
   alt,
-  aspectRatio = 2 / 3
-}) => {
+  aspectRatio = 2/3
+}: LazyImageProps)=> {
   const [loaded, setLoaded] = useState(false);
   const imgRef = useRef<any>(null);
 
@@ -45,6 +43,5 @@ const LazyImage: React.FC<LazyImageProps> = ({
     </div>
   );
 };
-
 
 export default LazyImage;
