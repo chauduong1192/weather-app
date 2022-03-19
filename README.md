@@ -1,46 +1,102 @@
-# Getting Started with Create React App
+# Weather App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# <img src="./public/background.png?raw=true" width="1000">
+<div align="center">
+  <a href="https://codeclimate.com/github/chauduong1192/web-next/maintainability">
+    <img src="https://api.codeclimate.com/v1/badges/f84fe0e7cf5adaf536a5/maintainability" />
+  </a>
+  <a href="https://codecov.io/gh/chauduong1192/web-next">
+    <img src="https://codecov.io/gh/chauduong1192/web-next/branch/master/graph/badge.svg" />
+  </a>
+  <a href="https://github.com/chauduong1192/web-next/runs/765177210?check_suite_focus=true">
+    <img src="https://github.com/chauduong1192/web-next/workflows/CI/badge.svg" alt="Build Status" />
+  </a>
+</div>
 
-## Available Scripts
+The source code using typescript, reactjs, redux, jest, bootstrap 5
 
-In the project directory, you can run:
+## Links
+- [Link Demo](https://web-next.herokuapp.com/)
 
-### `yarn start`
+## Folder Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+├── node_modules
+    └── [...]
+├── __tests__
+├── public
+├── src
+    └── api
+    └── assets
+        └── images
+        └── styles
+    └── components
+    └── redux
+    └── utils
+├── package.json
+...
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Environment Variables
 
-### `yarn test`
+See `.env.example` for development defaults.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Variable   | Notes | Default value|
+| --- | --- | --- |
+| `REACT_APP_METAWEATHER_API_URL` | Meta weather api url | https://www.metaweather.com/api |
+| `REACT_APP_CROSS_DOMAIN` | Cross-origin requests URL | https://the-ultimate-api-challenge.herokuapp.com |
+| `REACT_APP_IMAGE_PATH` | Meta weather image url | https://www.metaweather.com/static/img/weather |
+## Prerequisites
 
-### `yarn build`
+[NodeJS](htps://nodejs.org), version >= 14.0.0 ( Try to use this one [`nvm`](https://github.com/creationix/nvm) to easy manage Node versions — `brew install nvm`.)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In the project directory, copy `.env.example` and rename the file just has copied to `.env.local`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+yarn install
+```
 
-### `yarn eject`
+## Usage
+### Run the app
+```sh
+yarn start
+```
+Open http://localhost:3000 to view it in the browser.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Run unit test
+```sh
+yarn test
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Run Linter
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```sh
+yarn lint
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Build app and deploy to production
 
-## Learn More
+```sh
+yarn build
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Redux dev tools
+
+_Add details of how to access the app from within Chrome_
+
+To view the state in the app install [the Redux dev tools Chrome plugin](https://chrome.google.com/webstore/detail/remotedev/faicmgpfiaijcedapokpbdejaodbelph/related).
+
+## Author
+
+👤 **Chau Duong**
+
+- GitHub: [@chauduong1192](https://github.com/chauduong1192)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/chauduong1192/)
+- Website: [chauduong.xyz](https://chauduong.xyz)
+
+## Question and Issues
+
+(https://github.com/chauduong1192/weather-app/issues)

@@ -1,7 +1,11 @@
 {
-  "name": "weather-app-2",
+  "name": "weather-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://chauduong1192.github.io",
+  "engines": {
+    "node": ">=14"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
@@ -32,7 +36,9 @@
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
     "lint:fix": "eslint --fix --ext .ts,.tsx .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -68,6 +74,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "gh-pages": "^3.2.3",
     "husky": "^7.0.4",
     "jest-fetch-mock": "^3.0.3",
     "prettier": "^2.6.0",
