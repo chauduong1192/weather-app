@@ -2,14 +2,12 @@
 
 # <img src="./public/background.png?raw=true" width="1000">
 <div align="center">
-  <a href="https://codeclimate.com/github/chauduong1192/web-next/maintainability">
-    <img src="https://api.codeclimate.com/v1/badges/f84fe0e7cf5adaf536a5/maintainability" />
+  <a href="https://codeclimate.com/github/chauduong1192/weather-app/maintainability">
+    <img src="https://api.codeclimate.com/v1/badges/c97e058f295d0c36460f/maintainability" />
   </a>
-  <a href="https://codecov.io/gh/chauduong1192/web-next">
-    <img src="https://codecov.io/gh/chauduong1192/web-next/branch/master/graph/badge.svg" />
-  </a>
-  <a href="https://github.com/chauduong1192/web-next/runs/765177210?check_suite_focus=true">
-    <img src="https://github.com/chauduong1192/web-next/workflows/CI/badge.svg" alt="Build Status" />
+  
+  <a href="https://codecov.io/gh/chauduong1192/weather-app">
+    <img src="https://codecov.io/gh/chauduong1192/weather-app/branch/main/graph/badge.svg?token=ZZ4SIKCFG0"/>
   </a>
 </div>
 
