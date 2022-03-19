@@ -30,7 +30,8 @@
     "eject": "react-scripts eject",
     "test:coverage": "jest --coverage",
     "format": "prettier --write src/**/*.ts{,x}",
-    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}"
+    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
