@@ -21,8 +21,6 @@ The source code using typescript, reactjs, redux, jest, bootstrap 5
 ## Folder Structure
 
 ```
-├── node_modules
-    └── [...]
 ├── __tests__
 ├── public
 ├── src
