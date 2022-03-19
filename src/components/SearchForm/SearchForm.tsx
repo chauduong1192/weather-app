@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NotFound from '../NotFound';
+import NotFound from "../NotFound";
 import "./SearchForm.scss";
 
 type SearchFormProps = {
@@ -7,13 +7,13 @@ type SearchFormProps = {
   isError: boolean;
   errorMessage?: string;
   isFetching: boolean;
-}
+};
 
 const SearchForm: React.FC<SearchFormProps> = ({
   fetchLocationByCity,
   isError,
   errorMessage,
-  isFetching
+  isFetching,
 }) => {
   const [location, setLocation] = useState("");
 
@@ -46,7 +46,7 @@ const SearchForm: React.FC<SearchFormProps> = ({
           SEARCH
         </button>
       </div>
-      { isError && errorMessage && <NotFound message={errorMessage} />}
+      {isError && errorMessage && <NotFound message={errorMessage} />}
     </form>
   );
 };

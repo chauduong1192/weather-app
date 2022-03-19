@@ -3,24 +3,25 @@
 @import "~bootstrap/scss/mixins";
 
 .search-form {
-  margin-top: 32px;
+  margin: 32px auto;
+  width: 400px;
+
+  @include media-breakpoint-down(sm) {
+    width: 90%;
+
+    & button {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
   .input-group {
-    width: 400px;
+
     & .form-control {
       border-color: var(--bg-color);
   
       &:focus {
         box-shadow: none;
         border-color: var(--second-color);
-      }
-    }
-    @include media-breakpoint-down(sm) {
-      width: 90%;
-      margin: auto;
-
-      & button {
-        width: 100%;
-        margin-top: 10px;
       }
     }
   }

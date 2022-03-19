@@ -1,11 +1,11 @@
-import React, { Suspense, lazy } from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import React, { Suspense, lazy } from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 import configureStore from "./redux/store";
-import reportWebVitals from './reportWebVitals';
-import './assets/styles/common.scss';
+import reportWebVitals from "./reportWebVitals";
+import "./assets/styles/common.scss";
 
-const AppLazyLoad = lazy(() => import('./components/App'));
+const AppLazyLoad = lazy(() => import("./components/App"));
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,7 +15,7 @@ ReactDOM.render(
       </Suspense>
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

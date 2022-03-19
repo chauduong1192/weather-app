@@ -4,7 +4,6 @@ import reducer from './reducer';
 const key = 'weather';
 reducerRegistry.register(key, reducer);
 
+const exportedObject = { [key]: reducer }
 export { key };
-export default {
-  [key]: reducer,
-};
+export default exportedObject;

@@ -4,12 +4,12 @@ const request = async (uri?: string, method?: string, body?: any) => {
   const url = `${CROSS_DOMAIN}/${BASE_URL}/${uri}`;
   try {
     const res = await fetch(url, {
-        method,
-        body,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      method,
+      body,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const json = await res.json();
     return json;
   } catch (error) {
@@ -19,9 +19,6 @@ const request = async (uri?: string, method?: string, body?: any) => {
   }
 };
 
-const $get = async (uri?: string) => request(uri, 'GET');
+const $get = async (uri?: string) => request(uri, "GET");
 
-export {
-  request,
-  $get,
-};
+export { request, $get };

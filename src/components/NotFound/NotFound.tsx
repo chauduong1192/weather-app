@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import "./NotFound.scss";
 
 interface NotFoundProps {
-  message?: string
+  message?: string;
 }
 const DEFAULT_MESSAGE = "An error occurred";
 
