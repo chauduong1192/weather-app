@@ -36,6 +36,7 @@ module.exports = {
     ],
     '@typescript-eslint/no-explicit-any': 'off',
     'import/no-named-as-default': 0,
-    '@typescript-eslint/lines-between-class-members': 0
+    '@typescript-eslint/lines-between-class-members': 0,
+    '@typescript-eslint/default-param-last': 0
   }
 };

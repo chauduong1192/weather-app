@@ -1,3 +1,3 @@
-import LazyImage from './LazyImage';
+import LazyImage from "./LazyImage";
 
 export default LazyImage;

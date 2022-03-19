@@ -1,3 +1,3 @@
-import ForeCastLoader from './ForeCastLoader';
+import ForeCastLoader from "./ForeCastLoader";
 
 export default ForeCastLoader;

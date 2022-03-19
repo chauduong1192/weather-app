@@ -1,4 +1,4 @@
-import { GenericStoreAction } from '../types';
+import { GenericStoreAction } from "../types";
 
 import {
   FETCHING_LOCATION_BY_CITY,
@@ -8,9 +8,9 @@ import {
   FETCHING_LOCATION_BY_WOEID,
   FETCH_LOCATION_BY_WOEID_SUCCESS,
   FETCH_LOCATION_BY_WOEID_FAILED,
-} from './types';
+} from "./types";
 
-import { ForecastProps } from '../../components/Forecast';
+import { ForecastProps } from "../../components/Forecast";
 
 export type WeatherState = {
   isFetching: boolean;
@@ -20,7 +20,7 @@ export type WeatherState = {
   query: string;
   errorMessage: string;
   woeLocations: ForecastProps[];
-}
+};
 
 export const initialState = {
   isFetching: false,
@@ -34,7 +34,7 @@ export const initialState = {
 
 const reducer = (
   state: WeatherState = initialState,
-  action: GenericStoreAction,
+  action: GenericStoreAction
 ) => {
   switch (action.type) {
     case FETCHING_LOCATION_BY_CITY:
@@ -91,7 +91,8 @@ const reducer = (
         isFetching: false,
         isFetched: true,
         woeid: "",
-        errorMessage: "Oops! We ran into some problems. Please try again later.",
+        errorMessage:
+          "Oops! We ran into some problems. Please try again later.",
       };
     default:
       return state;

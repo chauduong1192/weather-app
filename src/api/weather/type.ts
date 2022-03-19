@@ -1,11 +1,10 @@
-
 type LocationResponse = {
   title: string;
   location_type: string;
   latt_long: string;
   woeid: number;
   distance: number;
-}
+};
 
 type ConsolidatdWetherType = {
   id: number;
@@ -22,14 +21,14 @@ type ConsolidatdWetherType = {
   humidity: number;
   visibility: number;
   predictability: number;
-}
+};
 
 type ParentType = {
   title: string;
   location_type: string;
   latt_long: string;
   woeid: number;
-}
+};
 
 type LocationWoeResponse = {
   title: string;
@@ -43,11 +42,7 @@ type LocationWoeResponse = {
   sources: {
     title: string;
     url: string;
-  }
-}
-
-export type {
-  LocationResponse,
-  LocationWoeResponse
+  };
 };
 
+export type { LocationResponse, LocationWoeResponse };

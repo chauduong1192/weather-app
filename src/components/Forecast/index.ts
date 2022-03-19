@@ -1,8 +1,6 @@
-import Forecast, { ForecastProps } from './Forecast';
-import ForecastBox from './ForecastBox';
+import Forecast, { ForecastProps } from "./Forecast";
+import ForecastBox from "./ForecastBox";
 
-export {
-  Forecast
-};
+export { Forecast };
 export type { ForecastProps };
 export default ForecastBox;
