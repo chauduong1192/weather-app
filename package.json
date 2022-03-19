@@ -37,7 +37,7 @@
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
     "lint:fix": "eslint --fix --ext .ts,.tsx .",
     "prepare": "husky install",
-    "predeploy": "npm run build",
+    "predeploy": "GENERATE_SOURCEMAP=false npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
