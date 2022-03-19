@@ -3,8 +3,6 @@ import moment from 'moment';
 import LazyImage from '../LazyImage';
 import { IMAGE_PATH } from '../../utils/constants';
 import './Forecast.scss';
-// import { ReactComponent as LC } from '../../assets/images/lc.svg';
-
 
 export type ForecastProps = {
   dayOfWeek: string;
@@ -26,8 +24,8 @@ const Forecast: React.FC<ForecastProps> = ({
         src={`${IMAGE_PATH}/${weatherStateAbbr}.svg`}
       />
       <div className="title">{moment(dayOfWeek).format('dddd')}</div>
-      <div>{`Max Temp: ${Math.round(maxTemp)}`}</div>
-      <div>{`Max Temp: ${Math.round(minTemp)}`}</div>
+      <div>{`Max Temp: ${Math.round(maxTemp)}`}&deg;</div>
+      <div>{`Min Temp: ${Math.round(minTemp)}`}&deg;</div>
     </div>
   );
 }

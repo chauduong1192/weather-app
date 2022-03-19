@@ -10,7 +10,6 @@ import {
 
 import { getLocationByCity, getLocationByWoeId } from '../../api/weather';
 import { LocationResponse, LocationWoeResponse } from '../../api/weather/type';
-import { GenericStoreAction } from '../types';
 
 const fetchLocationByWoeId = (woeId: string) => {
   return async dispatch => {
