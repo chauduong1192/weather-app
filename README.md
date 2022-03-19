@@ -16,7 +16,7 @@
 The source code using typescript, reactjs, redux, jest, bootstrap 5
 
 ## Links
-- [Link Demo](https://web-next.herokuapp.com/)
+- [Link Demo](https://chauduong1192.github.io/weather-app/)
 
 ## Folder Structure
 
