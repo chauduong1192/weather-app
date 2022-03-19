@@ -4,7 +4,8 @@ module.exports = {
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended',
     'plugin:jest/recommended',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
+    'plugin:import/recommended'
   ],
   plugins: ['react', '@typescript-eslint', 'jest'],
   env: {
@@ -33,6 +34,8 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
-  },
-  eslintIgnore: ['./tsconfig.json'],
+    '@typescript-eslint/no-explicit-any': 'off',
+    'import/no-named-as-default': 0,
+    '@typescript-eslint/lines-between-class-members': 0
+  }
 };
