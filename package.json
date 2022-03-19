@@ -2,7 +2,7 @@
   "name": "weather-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://chauduong1192.github.io",
+  "homepage": "https://chauduong1192.github.io/weather-app/",
   "engines": {
     "node": ">=14"
   },
