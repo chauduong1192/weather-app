@@ -1,0 +1,62 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+.search-suggestion {
+  position: absolute;
+  top: 100%;
+  left: 1px;
+  z-index: 1200;
+  width: 100%;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  background-color: #fff;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+
+  & mark {
+    background: unset;
+    font-weight: 500;
+    padding: 0;
+    color: var(--bs-primary);
+  }
+
+  .options {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    max-height: 400px;
+    overflow-y: scroll;
+    .option {
+      padding: 0;
+    }
+    strong {
+      display: block;
+      font-size: 0.858rem;
+      line-height: 1.57142857;
+      color: #37474f;
+      white-space: nowrap;
+      cursor: default;
+    }
+    .option-tree {
+      display: flex;
+      align-items: center;
+      padding: 5px 0px;
+      clear: both;
+      font-weight: 300;
+      line-height: 1.57142857;
+      &:hover {
+        text-decoration: none;
+        cursor: pointer;
+        background-color: #ececec;
+        outline: 0;
+      }
+      div {
+        :first-child {
+          margin: 0;
+        }
+        margin-left: 1rem;
+      }
+    }
+  }
+}

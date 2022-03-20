@@ -1,15 +1,25 @@
 import {
   FETCHING_LOCATION_BY_CITY,
   FETCH_LOCATION_BY_CITY_SUCCESS,
-  FETCH_LOCATION_BY_CITY_SUCCESS_WITH_EMPTY,
   FETCH_LOCATION_BY_CITY_FAILED,
   FETCHING_LOCATION_BY_WOEID,
   FETCH_LOCATION_BY_WOEID_SUCCESS,
   FETCH_LOCATION_BY_WOEID_FAILED,
+  SET_EMPTY_LOCATION,
+  RESET_INIT_STATE,
 } from "./types";
 
 import { getLocationByCity, getLocationByWoeId } from "../../api/weather";
 import { LocationResponse, LocationWoeResponse } from "../../api/weather/type";
+
+const setEmptyLocation = () => ({
+  type: SET_EMPTY_LOCATION,
+  payload: [],
+});
+
+const resetInitState = () => ({
+  type: RESET_INIT_STATE,
+});
 
 const fetchLocationByWoeId = (woeId: string) => {
   return async (dispatch) => {
@@ -20,23 +30,27 @@ const fetchLocationByWoeId = (woeId: string) => {
       const locationWoeRes: LocationWoeResponse = await getLocationByWoeId(
         woeId
       );
+      const { title } = locationWoeRes;
       dispatch({
         type: FETCH_LOCATION_BY_WOEID_SUCCESS,
-        payload: locationWoeRes.consolidated_weather
-          .map(
-            ({
-              applicable_date: dayOfWeek,
-              max_temp: maxTemp,
-              min_temp: minTemp,
-              weather_state_abbr: weatherStateAbbr,
-            }) => ({
-              dayOfWeek,
-              maxTemp,
-              minTemp,
-              weatherStateAbbr,
-            })
-          )
-          .slice(0, 5),
+        payload: locationWoeRes.consolidated_weather.map(
+          ({
+            applicable_date: dayOfWeek,
+            max_temp: maxTemp,
+            min_temp: minTemp,
+            weather_state_abbr: weatherStateAbbr,
+            the_temp: theTemp,
+            weather_state_name: weaTherState,
+          }) => ({
+            dayOfWeek,
+            maxTemp,
+            minTemp,
+            weatherStateAbbr,
+            theTemp,
+            weaTherState,
+            title,
+          })
+        ),
       });
     } catch (error) {
       dispatch({
@@ -55,17 +69,10 @@ const fetchLocationByCity = (query: string) => {
 
     try {
       const locationRes: LocationResponse[] = await getLocationByCity(query);
-      if (!locationRes.length) {
-        return dispatch({
-          type: FETCH_LOCATION_BY_CITY_SUCCESS_WITH_EMPTY,
-        });
-      }
-      const woeId = locationRes[0].woeid.toString();
       dispatch({
         type: FETCH_LOCATION_BY_CITY_SUCCESS,
-        payload: woeId,
+        payload: locationRes,
       });
-      await dispatch(fetchLocationByWoeId(woeId));
     } catch (error) {
       dispatch({
         type: FETCH_LOCATION_BY_CITY_FAILED,
@@ -75,4 +82,9 @@ const fetchLocationByCity = (query: string) => {
   };
 };
 
-export { fetchLocationByCity, fetchLocationByWoeId };
+export {
+  fetchLocationByCity,
+  fetchLocationByWoeId,
+  setEmptyLocation,
+  resetInitState,
+};

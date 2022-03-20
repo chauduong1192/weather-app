@@ -9,6 +9,9 @@ export type ForecastProps = {
   maxTemp: number;
   minTemp: number;
   weatherStateAbbr: string;
+  theTemp: number;
+  weaTherState: string;
+  title: string;
 };
 
 const Forecast: React.FC<ForecastProps> = ({
@@ -24,8 +27,8 @@ const Forecast: React.FC<ForecastProps> = ({
         src={`${IMAGE_PATH}/${weatherStateAbbr}.svg`}
       />
       <div className="title">{moment(dayOfWeek).format("dddd")}</div>
-      <div>{`Max Temp: ${Math.round(maxTemp)}`}&deg;</div>
-      <div>{`Min Temp: ${Math.round(minTemp)}`}&deg;</div>
+      <div className="temp">{`Max Temp: ${Math.round(maxTemp)}`}&deg;C</div>
+      <div className="temp">{`Min Temp: ${Math.round(minTemp)}`}&deg;C</div>
     </div>
   );
 };

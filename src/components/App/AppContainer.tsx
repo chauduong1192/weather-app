@@ -1,14 +1,11 @@
 import { connect } from "react-redux";
-import { fetchLocationByCity } from "../../redux/weather/actions";
 import { weatherReducer } from "../../redux/weather/selectors";
 import App from "./App";
 
 export const mapStateToProps = (state) => ({
-  ...weatherReducer(state),
+  isFetchingWoe: weatherReducer(state).isFetchingWoe,
+  isFetched: weatherReducer(state).isFetched,
+  woeLocations: weatherReducer(state).woeLocations,
 });
 
-const mapDispatchToProps = {
-  fetchLocationByCity,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, {})(App);

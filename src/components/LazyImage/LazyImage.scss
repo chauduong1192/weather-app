@@ -1,41 +1,39 @@
 .lazy-image {
   position: relative;
   overflow: hidden;
-  height: 100%;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
   margin-bottom: 8px;
 
-    & img,
-    .no-lqip {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
+  & img,
+  .no-lqip {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 
-    & img {
-        object-fit: cover;
-        object-position: center;
-    }
+  & img {
+    object-fit: cover;
+    object-position: center;
+  }
 
-    & .no-lqip {
-        border-radius: var(--forecast-border-radius);
-    }
+  & .no-lqip {
+    border-radius: var(--forecast-border-radius);
+  }
 
-    & .source {
-        opacity: 0;
-        transition: opacity 1200ms;
-    }
+  & .source {
+    opacity: 0;
+    transition: opacity 1200ms;
+  }
 
-    & .loaded {
-        opacity: 1;
-    }
+  & .loaded {
+    opacity: 1;
+  }
 }

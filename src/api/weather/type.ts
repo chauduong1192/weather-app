@@ -6,6 +6,7 @@ type LocationResponse = {
   distance: number;
 };
 
+
 type ConsolidatdWetherType = {
   id: number;
   applicable_date: string;

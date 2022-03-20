@@ -2,7 +2,7 @@
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 
-.weather-app {  
+.weather-app {
   h1 {
     font-size: 3rem;
     font-weight: 900;
@@ -14,17 +14,23 @@
     }
   }
   .weather-box {
-    display: flex;
-    // justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
     margin: 0 auto;
     border-radius: var(--main-border-radius);
     background-color: var(--bg-color--card);
     color: var(--text-color);
-    width: 94%;
     max-width: 900px;
     min-height: 300px;
+
+    .left-side {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    .right-side {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
   }
 }
 @include media-breakpoint-down(md) {

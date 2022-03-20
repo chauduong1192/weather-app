@@ -1,0 +1,23 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+.general-forecast {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  .address {
+    display: flex;
+    align-items: center;
+    svg {
+      margin-right: 8px;
+    }
+  }
+  .lazy-image {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 12px;
+  }
+}

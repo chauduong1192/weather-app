@@ -33,7 +33,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
       <div style={{ paddingBottom: `${100 / aspectRatio}%` }} />
       <div
         className="no-lqip"
-        style={{ backgroundColor: loaded ? "white" : "#eee" }}
+        style={{ backgroundColor: loaded ? "transparent" : "#eee" }}
       />
       <img
         loading="lazy"

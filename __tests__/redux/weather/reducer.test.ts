@@ -9,7 +9,7 @@ describe('weather reducer', () => {
     const action = { type: wetherTypes.FETCHING_LOCATION_BY_CITY };
     const result = {
       ...initialState,
-      isFetching: true,
+      isFetchingCity: true,
       isFetched: false,
       isError: false,
       errorMessage: "",
@@ -25,7 +25,7 @@ describe('weather reducer', () => {
     const action = { type: wetherTypes.FETCH_LOCATION_BY_CITY_SUCCESS, payload: locationByCity };
     const result = {
       ...initialState,
-      isFetching: true,
+      isFetchingCity: true,
       isFetched: false,
       woeid: action.payload,
     };
@@ -39,7 +39,7 @@ describe('weather reducer', () => {
     const action = { type: wetherTypes.FETCH_LOCATION_BY_CITY_SUCCESS_WITH_EMPTY };
     const result = {
       ...initialState,
-      isFetching: false,
+      isFetchingCity: false,
       isFetched: false,
       isError: true,
       woeid: "",
@@ -57,7 +57,7 @@ describe('weather reducer', () => {
     const result = {
       ...initialState,
       isError: true,
-      isFetching: false,
+      isFetchingCity: false,
       isFetched: true,
       errorMessage: errorMessage,
     };
@@ -71,7 +71,7 @@ describe('weather reducer', () => {
     const action = { type: wetherTypes.FETCHING_LOCATION_BY_WOEID };
     const result = {
       ...initialState,
-      isFetching: true,
+      isFetchingCity: true,
       woeLocations: [],
     };
     Reducer(weatherReducer)
@@ -98,7 +98,7 @@ describe('weather reducer', () => {
     const result = {
       ...initialState,
       isError: true,
-      isFetching: false,
+      isFetchingCity: false,
       isFetched: true,
       woeid: "",
       errorMessage: "Oops! We ran into some problems. Please try again later.",
