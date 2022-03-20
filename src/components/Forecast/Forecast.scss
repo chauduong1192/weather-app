@@ -5,7 +5,6 @@
 .forecast-box {
   display: flex;
   flex-direction: row;
-  // width: 84%;
   flex-wrap: wrap;
   justify-content: center;
 
@@ -46,10 +45,11 @@
   }
 
   @include media-breakpoint-down(sm) {
-    justify-content: space-around;
+    justify-content: flex-start;
     .forecast {
-      margin-right: 0px;
+      margin-right: 14px;
       margin-bottom: 12px;
+      width: 100px;
     }
   }
 }

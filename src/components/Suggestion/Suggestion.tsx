@@ -20,7 +20,7 @@ const Suggestion: React.FC<SuggestionProps> = ({
 
   return (
     <div className="search-suggestion">
-      <ul className="options">
+      <ul className="options" tabIndex={0}>
         {locations.map(({ title, woeid }, idx) => (
           <li
             key={idx}

@@ -23,7 +23,7 @@ const resetInitState = () => (dispatch) => {
   dispatch({
     type: RESET_INIT_STATE,
   });
-}
+};
 
 const fetchLocationByWoeId = (woeId: string) => {
   return async (dispatch) => {

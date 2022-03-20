@@ -20,18 +20,22 @@ const App: React.FC<AppProps> = ({
   const isShowForeCast = isFetched && woeLocations.length > 0;
 
   return (
-    <div className="weather-app container">
+    <main className="weather-app container">
       <h1 className="mb-4">
         {" "}
         <span>Weather</span> Forecast
       </h1>
       <div className="row weather-box">
         {isShowForeCast && (
-          <div className="left-side col-md-3 col-12">
+          <div className="left-side col-md-3 col-sm-4 col-12">
             <GeneralForecast {...woeLocations[0]} />
           </div>
         )}
-        <div className={`right-side ${isShowForeCast && "col-md-9"} col-12`}>
+        <div
+          className={`right-side ${
+            isShowForeCast && "col-md-9 col-sm-8"
+          } col-12`}
+        >
           <SearchForm />
           {isShowForeCast && (
             <ForecastBox woeLocations={woeLocations.slice(1)} />
@@ -39,7 +43,7 @@ const App: React.FC<AppProps> = ({
           {isFetchingWoe && <ForeCastLoader />}
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

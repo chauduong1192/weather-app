@@ -17,9 +17,9 @@ const GeneralForecast: React.FC<ForecastProps> = ({
     <div className="general-forecast">
       <div>
         <h2 className="day-of-week">{moment(dayOfWeek).format("dddd")}</h2>
-        <h5 className="address">
+        <h3 className="address">
           <PinMap /> {title}
-        </h5>
+        </h3>
       </div>
       <div>
         <LazyImage

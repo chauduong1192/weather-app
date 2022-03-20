@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import NotFound from "../NotFound";
 import Suggestion from "../Suggestion";
 import "./SearchForm.scss";
@@ -31,7 +31,7 @@ const SearchForm: React.FC<SearchFormProps> = ({
   setEmptyLocation,
   resetInitState,
 }) => {
-  const inputEl: any = React.useRef(null);
+  const inputEl: any = useRef(null);
   let typingTimer;
   const doneTypingInterval = 500;
 
@@ -43,7 +43,7 @@ const SearchForm: React.FC<SearchFormProps> = ({
 
   const onSearchLocation = async () => {
     const currentValue = inputEl?.current?.value;
-    // if (currentValue.trim() === "") return;
+    if (currentValue.trim() === "") return;
     await fetchLocationByCity(currentValue);
   };
 
@@ -103,14 +103,14 @@ const SearchForm: React.FC<SearchFormProps> = ({
           type="text"
           className="form-control"
           placeholder="Search weather for a city"
-          aria-label="Search"
-          aria-describedby="button-search"
+          aria-label="Search input"
           autoFocus
           disabled={isFetchingCity || isFetchingWoe}
         />
         <button
           type="button"
           className="btn btn-link"
+          aria-label="Search button"
           onClick={handleButtonClick}
         >
           {!isFetchingCity && (isFetched ? <RemoveIcon /> : <SearchIcon />)}
