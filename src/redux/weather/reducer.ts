@@ -98,7 +98,10 @@ const reducer = (
         locationSuggestions: action.payload,
       };
     case RESET_INIT_STATE:
-      return initialState;
+      return {
+        ...state,
+        ...initialState,
+      };
     default:
       return state;
   }

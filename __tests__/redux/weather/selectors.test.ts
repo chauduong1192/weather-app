@@ -5,7 +5,7 @@ import { initialState } from '../../../src/redux/weather/reducer';
 
 describe('weather selector', () => {
 
-  it('should select all state in todo', () => {
+  it('should select all state in weather', () => {
     const state = {
       weather: initialState
     };

@@ -10,8 +10,8 @@ export type ForecastProps = {
   minTemp: number;
   weatherStateAbbr: string;
   theTemp: number;
-  weaTherState: string;
-  title: string;
+  weaTherState?: string;
+  title?: string;
 };
 
 const Forecast: React.FC<ForecastProps> = ({

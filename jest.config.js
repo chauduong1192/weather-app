@@ -2,26 +2,31 @@
 module.exports = {
   preset: "ts-jest",
   roots: ["<rootDir>"],
-  setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$',
+  setupFilesAfterEnv: ["<rootDir>/jest/setupTests.ts"],
+  testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$",
   testEnvironment: "node",
   moduleFileExtensions: ["ts", "tsx", "js"],
   moduleNameMapper: {
-    "^.+\\.(css|less|scss)$": "babel-jest"
+    "^.+\\.(css|less|scss)$": "babel-jest",
+    "\\.svg": "<rootDir>/jest/svgMock.ts",
   },
-  testPathIgnorePatterns: ['<rootDir>/build/', '<rootDir>/node_modules/'],
+  testPathIgnorePatterns: ["<rootDir>/build/", "<rootDir>/node_modules/"],
   globals: {
-    'ts-jest': {
-      tsconfig: '<rootDir>/tsconfig.jest.json',
+    "ts-jest": {
+      tsconfig: "<rootDir>/tsconfig.jest.json",
     },
+  },
+  transform: {
+    "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.svg$": "<rootDir>/jest/svgTransform.js",
   },
   collectCoverage: true,
   collectCoverageFrom: [
-    './src/components/**/*.tsx',
-    './src/api/**/*.ts',
-    './src/redux/*/*.ts',
-    '!**/*.d.ts',
-    '!**/node_modules/**',
+    "./src/components/**/*.tsx",
+    "./src/api/**/*.ts",
+    "./src/redux/*/*.ts",
+    "!**/*.d.ts",
+    "!**/node_modules/**",
   ],
   coverageThreshold: {
     global: {

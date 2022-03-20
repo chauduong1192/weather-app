@@ -31,7 +31,7 @@ const SearchForm: React.FC<SearchFormProps> = ({
   setEmptyLocation,
   resetInitState,
 }) => {
-  const inputEl: any = useRef(null);
+  const inputEl: any = React.useRef(null);
   let typingTimer;
   const doneTypingInterval = 500;
 
@@ -43,11 +43,11 @@ const SearchForm: React.FC<SearchFormProps> = ({
 
   const onSearchLocation = async () => {
     const currentValue = inputEl?.current?.value;
-    if (currentValue.trim() === "") return;
+    // if (currentValue.trim() === "") return;
     await fetchLocationByCity(currentValue);
   };
 
-  const handleCitySelected = ({ title, woeid }) => {
+  const handleCitySelected = async ({ title, woeid }) => {
     inputEl.current.value = title;
     setEmptyLocation();
     fetchLocationByWoeId(woeid);
@@ -67,7 +67,7 @@ const SearchForm: React.FC<SearchFormProps> = ({
   const handleKeyUp = (e) => {
     if (e.key === "Enter") return;
 
-    if (!inputEl.current.value) {
+    if (!inputEl?.current?.value) {
       clearTimeout(typingTimer);
       resetInitState();
       return;
@@ -81,7 +81,7 @@ const SearchForm: React.FC<SearchFormProps> = ({
   };
 
   const handleButtonClick = () => {
-    if (inputEl.current.value === "") {
+    if (inputEl?.current?.value === "") {
       return;
     }
     if (!isFetched) {
@@ -122,7 +122,7 @@ const SearchForm: React.FC<SearchFormProps> = ({
         </button>
         {locationSuggestions.length > 0 && (
           <Suggestion
-            keyword={inputEl?.current?.value}
+            keyword={inputEl.current.value}
             locations={locationSuggestions}
             handleCitySelected={handleCitySelected}
           />

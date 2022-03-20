@@ -4,12 +4,8 @@ describe("AppContainer", () => {
   it("should map state in mapStateToProps", () => {
     const initialState = {
       weather: {
-        isFetchingCity: false,
+        isFetchingWoe: false,
         isFetched: false,
-        isError: false,
-        woeid: "",
-        query: "",
-        errorMessage: "",
         woeLocations: [],
       },
     };

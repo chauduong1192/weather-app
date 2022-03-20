@@ -5,7 +5,7 @@ import { App } from "../../src/components/App";
 describe("App component", () => {
   let wrapper;
   let props = {
-    isFetchingCity: false,
+    isFetchingWoe: false,
     isFetched: false,
     woeLocations: [],
   };
@@ -20,7 +20,7 @@ describe("App component", () => {
 
   it("should render ForeCastLoader when fetching data", () => {
     wrapper.setProps({
-      isFetchingCity: true,
+      isFetchingWoe: true,
     });
     expect(wrapper.exists()).toBe(true);
     expect(wrapper.find("ForeCastLoader")).toHaveLength(1);
@@ -28,7 +28,7 @@ describe("App component", () => {
 
   it("should render ForeCast when fetched data sucessful", () => {
     wrapper.setProps({
-      isFetchingCity: false,
+      isFetchingWoe: false,
       isFetched: true,
       woeLocations: [
         {

@@ -7,6 +7,9 @@ describe("SearchFormContainer", () => {
         isFetchingCity: false,
         isError: false,
         errorMessage: "",
+        isFetched: false,
+        isFetchingWoe: false,
+        locationSuggestions: jest.fn(),
       },
     };
     expect(mapStateToProps(initialState)).toEqual(initialState.weather);

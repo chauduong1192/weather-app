@@ -1,21 +1,26 @@
 /**
  * @jest-environment jsdom
  */
-import React from "react";
-import { mount } from "enzyme";
+import React, { useRef } from "react";
+import { mount, shallow } from "enzyme";
 import { SearchForm } from "../../src/components/SearchForm";
-
-export const delay = (time) =>
-  new Promise((resolve) => setTimeout(resolve, time));
+import { locationByCity } from "../../src/utils/dataMock";
 
 describe("SearchForm component", () => {
   let wrapper;
   const defaultProps = {
+    fetchLocationByCity: jest.fn(),
+    fetchLocationByWoeId: jest.fn(),
+    setEmptyLocation: jest.fn(),
+    resetInitState: jest.fn(),
     isFetchingCity: false,
     isError: false,
     errorMessage: "",
-    fetchLocationByCity: jest.fn(),
+    isFetched: false,
+    isFetchingWoe: false,
+    locationSuggestions: [],
   };
+
   beforeEach(async () => {
     wrapper = mount(<SearchForm {...defaultProps} />);
   });
@@ -33,21 +38,67 @@ describe("SearchForm component", () => {
     expect(wrapper.find("NotFound")).toHaveLength(1);
   });
 
-  it("should click button search", async () => {
-    expect(wrapper.find("NotFound")).toHaveLength(0);
-    const preventDefault = jest.fn();
-    wrapper.find("button").simulate("click", {
-      preventDefault,
+  it("should handle key up if value is null", () => {
+    wrapper.find("input").simulate("keyup", {
+      key: 111,
     });
-    expect(preventDefault).toHaveBeenCalledTimes(1);
   });
 
-  it("should call onChange of input", async () => {
-    wrapper.find("input").simulate("change", {
-      target: {
-        value: "ho chi minh",
-      },
+  it("should handle key up if type enter", () => {
+    wrapper.find("input").simulate("keyup", {
+      key: "Enter",
     });
-    expect(wrapper.find("input").instance().value).toEqual("ho chi minh");
+  });
+
+  it("should handle key press ", () => {
+    wrapper.find("input").simulate("keypress", {
+      key: "Enter",
+    });
+  });
+
+  it("should handle key press ", () => {
+    wrapper.find("input").simulate("keydown", {
+      key: 111,
+    });
+  });
+
+  it("should display suggestion box when having loction data", () => {
+    wrapper.setProps({
+      locationSuggestions: locationByCity,
+    });
+    expect(wrapper.find("Suggestion")).toHaveLength(1);
+  });
+
+  it("should call handleCitySlected", () => {
+    wrapper.setProps({
+      locationSuggestions: locationByCity,
+    });
+    wrapper.find("Suggestion").props().handleCitySelected({
+      title: "test",
+      woeid: "test",
+    });
+  });
+
+  it("should call handleButtonClick with isFetched false", () => {
+    const wrapper = shallow(<SearchForm {...defaultProps} />);
+    wrapper.find("button").simulate("click");
+  });
+
+  it("should render RemoveIcon when isFetched true", () => {
+    wrapper.setProps({
+      isFetched: true,
+    });
+    expect(wrapper.find("svg")).toHaveLength(1);
+  });
+
+  it("should render Loader when fetching city or woe", () => {
+    wrapper.setProps({
+      isFetchingCity: true,
+    });
+    expect(wrapper.find(".icon-container")).toHaveLength(1);
+    wrapper.setProps({
+      isFetchingWoe: true,
+    });
+    expect(wrapper.find(".icon-container")).toHaveLength(1);
   });
 });

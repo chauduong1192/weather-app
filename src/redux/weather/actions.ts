@@ -12,14 +12,18 @@ import {
 import { getLocationByCity, getLocationByWoeId } from "../../api/weather";
 import { LocationResponse, LocationWoeResponse } from "../../api/weather/type";
 
-const setEmptyLocation = () => ({
-  type: SET_EMPTY_LOCATION,
-  payload: [],
-});
+const setEmptyLocation = () => (dispatch) => {
+  dispatch({
+    type: SET_EMPTY_LOCATION,
+    payload: [],
+  });
+};
 
-const resetInitState = () => ({
-  type: RESET_INIT_STATE,
-});
+const resetInitState = () => (dispatch) => {
+  dispatch({
+    type: RESET_INIT_STATE,
+  });
+}
 
 const fetchLocationByWoeId = (woeId: string) => {
   return async (dispatch) => {

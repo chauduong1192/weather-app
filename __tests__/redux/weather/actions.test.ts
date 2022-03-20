@@ -13,32 +13,20 @@ describe('weather actions', () => {
 
   it('should call action FETCH_LOCATION_BY_CITY_SUCCESS', async () => {
     (getLocationByCity as any).mockReturnValueOnce(locationByCity);
-    const dispatches = await Thunk(actions.fetchLocationByCity).execute('ho chi minh');
+    const dispatches = await Thunk(actions.fetchLocationByCity).execute('San Francisco');
 
-    expect(dispatches.length).toBe(3);
+    expect(dispatches.length).toBe(2);
     expect(dispatches[0].getAction()).toEqual({
       type: wetherTypes.FETCHING_LOCATION_BY_CITY
     });
     expect(dispatches[1].getAction()).toEqual({
-      type: wetherTypes.FETCH_LOCATION_BY_CITY_SUCCESS, payload: locationByCity[0].woeid.toString()
+      type: wetherTypes.FETCH_LOCATION_BY_CITY_SUCCESS, payload: locationByCity
     });
   });
 
-  // it('should call action FETCH_LOCATION_BY_CITY_SUCCESS_WITH_EMPTY', async () => {
-  //   (getLocationByCity as any).mockReturnValueOnce([]);
-  //   const dispatches = await Thunk(actions.fetchLocationByCity).execute('test');
-  //   expect(dispatches.length).toBe(2);
-  //   expect(dispatches[0].getAction()).toEqual({
-  //     type: wetherTypes.FETCHING_LOCATION_BY_CITY
-  //   });
-  //   expect(dispatches[1].getAction()).toEqual({
-  //     type: wetherTypes.FETCH_LOCATION_BY_CITY_SUCCESS_WITH_EMPTY
-  //   });
-  // });
-
   it('should call action FETCH_LOCATION_BY_CITY_FAILED', async () => {
     (getLocationByCity as any).mockRejectedValueOnce(errorMessage);
-    const dispatches = await Thunk(actions.fetchLocationByCity).execute('123');
+    const dispatches = await Thunk(actions.fetchLocationByCity).execute('San Francisco');
 
     expect(dispatches.length).toBe(2);
     expect(dispatches[0].getAction()).toEqual({
@@ -72,6 +60,25 @@ describe('weather actions', () => {
     });
     expect(dispatches[1].getAction()).toEqual({
       type: wetherTypes.FETCH_LOCATION_BY_WOEID_FAILED, payload: errorMessage
+    });
+  });
+
+  it('should call action SET_EMPTY_LOCATION', () => {
+    const dispatches = Thunk(actions.setEmptyLocation).execute();
+
+    expect(dispatches.length).toBe(1);
+    expect(dispatches[0].getAction()).toEqual({
+      type: wetherTypes.SET_EMPTY_LOCATION,
+      payload: []
+    });
+  });
+
+  it('should call action RESET_INIT_STATE', () => {
+    const dispatches = Thunk(actions.resetInitState).execute();
+
+    expect(dispatches.length).toBe(1);
+    expect(dispatches[0].getAction()).toEqual({
+      type: wetherTypes.RESET_INIT_STATE
     });
   });
 
