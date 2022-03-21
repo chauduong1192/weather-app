@@ -41,13 +41,13 @@ const SearchForm: React.FC<SearchFormProps> = ({
     };
   }, [typingTimer]);
 
-  const onSearchLocation = async () => {
+  const onSearchLocation = () => {
     const currentValue = inputEl?.current?.value;
-    if (currentValue.trim() === "") return;
-    await fetchLocationByCity(currentValue);
+    if (currentValue?.trim() === "") return;
+    fetchLocationByCity(currentValue);
   };
 
-  const handleCitySelected = async ({ title, woeid }) => {
+  const handleCitySelected = ({ title, woeid }) => {
     inputEl.current.value = title;
     setEmptyLocation();
     fetchLocationByWoeId(woeid);

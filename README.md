@@ -1,6 +1,7 @@
 # Weather App
 
-# <img src="./public/background.png?raw=true" width="1000">
+# <img src="./public/showcase.gif" width="1000">
+
 <div align="center">
   <a href="https://codeclimate.com/github/chauduong1192/weather-app/maintainability">
     <img src="https://api.codeclimate.com/v1/badges/c97e058f295d0c36460f/maintainability" />
@@ -14,6 +15,7 @@
 The source code using typescript, reactjs, redux, jest, bootstrap 5
 
 ## Links
+
 - [Link Demo](https://chauduong1192.github.io/weather-app/)
 
 ## Folder Structure
@@ -37,11 +39,12 @@ The source code using typescript, reactjs, redux, jest, bootstrap 5
 
 See `.env.example` for development defaults.
 
-| Variable   | Notes | Default value|
-| --- | --- | --- |
-| `REACT_APP_METAWEATHER_API_URL` | Meta weather api url | https://www.metaweather.com/api |
-| `REACT_APP_CROSS_DOMAIN` | Cross-origin requests URL | https://the-ultimate-api-challenge.herokuapp.com |
-| `REACT_APP_IMAGE_PATH` | Meta weather image url | https://www.metaweather.com/static/img/weather |
+| Variable                        | Notes                     | Default value                                    |
+| ------------------------------- | ------------------------- | ------------------------------------------------ |
+| `REACT_APP_METAWEATHER_API_URL` | Meta weather api url      | https://www.metaweather.com/api                  |
+| `REACT_APP_CROSS_DOMAIN`        | Cross-origin requests URL | https://the-ultimate-api-challenge.herokuapp.com |
+| `REACT_APP_IMAGE_PATH`          | Meta weather image url    | https://www.metaweather.com/static/img/weather   |
+
 ## Prerequisites
 
 [NodeJS](htps://nodejs.org), version >= 14.0.0 ( Try to use this one [`nvm`](https://github.com/creationix/nvm) to easy manage Node versions — `brew install nvm`.)
@@ -55,13 +58,17 @@ yarn install
 ```
 
 ## Usage
+
 ### Run the app
+
 ```sh
 yarn start
 ```
+
 Open http://localhost:3000 to view it in the browser.
 
 ### Run unit test
+
 ```sh
 yarn test
 ```
@@ -77,7 +84,6 @@ yarn lint
 ```sh
 yarn build
 ```
-
 
 ### Redux dev tools
 
