@@ -18,6 +18,10 @@ The source code using typescript, reactjs, redux, jest, bootstrap 5
 
 - [Link Demo](https://chauduong1192.github.io/weather-app/)
 
+## Coverage
+
+# <img src="./public/coverage.png" width="1000">
+
 ## Folder Structure
 
 ```
