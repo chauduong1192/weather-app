@@ -38,9 +38,21 @@ describe("SearchForm component", () => {
     expect(wrapper.find("NotFound")).toHaveLength(1);
   });
 
+  it("should handle key up if having value", () => {
+    wrapper.find("input").simulate("keyup", {
+      key: 111,
+    });
+    jest.spyOn(React, "useRef").mockReturnValueOnce({
+      current: { value: "ho chi minh" },
+    });
+  });
+
   it("should handle key up if value is null", () => {
     wrapper.find("input").simulate("keyup", {
       key: 111,
+    });
+    jest.spyOn(React, "useRef").mockReturnValueOnce({
+      current: { value: "" },
     });
   });
 

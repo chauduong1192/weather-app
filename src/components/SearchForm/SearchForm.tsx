@@ -31,7 +31,7 @@ const SearchForm: React.FC<SearchFormProps> = ({
   setEmptyLocation,
   resetInitState,
 }) => {
-  const inputEl: any = useRef(null);
+  const inputEl: any = useRef();
   let typingTimer;
   const doneTypingInterval = 500;
 
