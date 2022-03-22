@@ -51,7 +51,7 @@ See `.env.example` for development defaults.
 
 ## Prerequisites
 
-[NodeJS](htps://nodejs.org), version >= 14.0.0 ( Try to use this one [`nvm`](https://github.com/creationix/nvm) to easy manage Node versions — `brew install nvm`.)
+[NodeJS](htps://nodejs.org), version >= 16.0.0 ( Try to use this one [`nvm`](https://github.com/creationix/nvm) to easy manage Node versions — `brew install nvm`.)
 
 In the project directory, copy `.env.example` and rename the file just has copied to `.env.local`
 
