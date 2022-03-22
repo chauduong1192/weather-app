@@ -89,11 +89,13 @@ describe("SearchForm component", () => {
       title: "test",
       woeid: "test",
     });
+    expect(wrapper.find("input").instance().value).toEqual("test");
   });
 
   it("should call handleButtonClick with isFetched false", () => {
     const wrapper = shallow(<SearchForm {...defaultProps} />);
     wrapper.find("button").simulate("click");
+    expect(wrapper.find("Suggestion").length).toEqual(0);
   });
 
   it("should render RemoveIcon when isFetched true", () => {
