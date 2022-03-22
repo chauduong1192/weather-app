@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://chauduong1192.github.io/weather-app",
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
