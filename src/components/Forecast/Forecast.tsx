@@ -27,8 +27,8 @@ const Forecast: React.FC<ForecastProps> = ({
         src={`${IMAGE_PATH}/${weatherStateAbbr}.svg`}
       />
       <div className="title">{moment(dayOfWeek).format("dddd")}</div>
-      <div className="temp">{`Max Temp: ${Math.round(maxTemp)}`}&deg;C</div>
       <div className="temp">{`Min Temp: ${Math.round(minTemp)}`}&deg;C</div>
+      <div className="temp">{`Max Temp: ${Math.round(maxTemp)}`}&deg;C</div>
     </div>
   );
 };
